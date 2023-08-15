@@ -5,14 +5,22 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    const border = OutlineInputBorder(
+      borderRadius: BorderRadius.horizontal(
+        left: Radius.circular(50),
+      ),
+      borderSide: BorderSide(
+        color: Color.fromRGBO(225, 225, 225, 1),
+      ),
+    );
+    return const Scaffold(
       body: SafeArea(
         child: Column(
           children: [
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: Text(
                     'Shoes \nCollection',
                     style: TextStyle(
@@ -26,14 +34,9 @@ class HomePage extends StatelessWidget {
                     decoration: InputDecoration(
                       hintText: 'Search',
                       prefixIcon: Icon(Icons.search),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(50),
-                        ),
-                        borderSide: BorderSide(
-                          color: Color.fromRGBO(225, 225, 225, 1),
-                        ),
-                      ),
+                      border: border,
+                      enabledBorder: border,
+                      focusedBorder: border,
                     ),
                   ),
                 ),
